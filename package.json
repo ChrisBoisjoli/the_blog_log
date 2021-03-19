@@ -1,0 +1,20 @@
+{
+  "name": "the_blog_log",
+  "version": "1.0.0",
+  "description": "Blog log the Log Blog",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisBoisjoli/the_blog_log.git"
+  },
+  "author": "ChrisBoisjoli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisBoisjoli/the_blog_log/issues"
+  },
+  "homepage": "https://github.com/ChrisBoisjoli/the_blog_log#readme"
+}
