@@ -1,3 +1,4 @@
+
 [
     {
       "name": "Bob",
@@ -29,5 +30,7 @@
       "email": "bill.s.preston.esq@yahoo.com",
       "password": "password12345"
     }
-  ]
+  ];
+
+  const seedUser = ()
   
