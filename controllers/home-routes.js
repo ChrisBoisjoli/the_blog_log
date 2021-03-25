@@ -13,7 +13,7 @@ router.get('/', withAuth, async (req, res) => {
       
       
     });
-    console.log(postData);
+    // console.log(postData);
     const posts = postData.map((posts) => posts.get({ plain: true }));
 
     res.render('homepage', {
