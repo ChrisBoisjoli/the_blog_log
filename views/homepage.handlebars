@@ -1,1 +1,4 @@
-<H1> Hi {{name}} You are logged in</H1>
+<H1> Hi {{user.name}} You are logged in</H1>
+{{#each post as |posts|}}
+{{posts}}
+{{/each}}
