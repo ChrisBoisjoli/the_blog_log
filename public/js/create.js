@@ -1,12 +1,12 @@
 const create = async (event) => {
     event.preventDefault();
 
-    // Trim and get the values of the title and content.
+    // Trim and get the values of the title and post_body.
     const title = document.querySelector('#title').value.trim();
-    const content = document.querySelector('#content').value.trim();
+    const postBody = document.querySelector('#postBody').value.trim();
 
     // If title and content exist, go to post.
-    if (title && content) {
+    if (title && postBody) {
         const response = await fetch('/dashboard/create', 
         {
             method: 'POST',

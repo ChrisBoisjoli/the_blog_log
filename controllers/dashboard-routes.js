@@ -14,6 +14,23 @@ router.get('/dashboard', withAuth, async (req, res) => {
       res.status(500).json(err);
   }
   });
+ // Create new post with user input.
+ router.post('/create', async (req, res) => {
+  try {
+      const userData = await Post.create(
+      {
+          title: req.body.title,
+          post_body: req.body.post_body,
+          user_id: req.session.user_id,
+      });
+      res.status(200).json(userData);
+  }
+  catch (err) {
+      res.status(400).json(err);
+  }
+  });
+  
+
   // Get all posts by user
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
@@ -35,7 +52,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const user_posts = postData.map((user_post) => 
     user_post.get( { plain: true })
     );
-    res.render('dashboard', {
+    res.render('all', {
       user_posts,
       loggedIn: req.session.loggedIn,
     });
@@ -68,22 +85,7 @@ router.get('/dashboard/', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
   });
-  // Create new post with user input.
-router.post('/create', async (req, res) => {
-  try {
-      const userData = await Post.create(
-      {
-          title: req.body.title,
-          content: req.body.content,
-          user_id: req.session.user_id,
-      });
-      res.status(200).json(userData);
-  }
-  catch (err) {
-      res.status(400).json(err);
-  }
-  });
-  
+ 
   
 
 
