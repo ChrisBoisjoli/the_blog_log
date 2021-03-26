@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { User, Post } = require('../models');
 const withAuth = require('../utils/auth');
 
+
+//shows post username
 router.get('/', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -10,8 +12,6 @@ router.get('/', withAuth, async (req, res) => {
           attributes:  ['name', 'username'] ,
         }
       ]
-      
-      
     });
     // console.log(postData);
     const posts = postData.map((posts) => posts.get({ plain: true }));
@@ -25,6 +25,7 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+// login 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -33,5 +34,7 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+
 
 module.exports = router;
