@@ -1,8 +1,8 @@
 <section class="card">
   <a href="/posts/{{id}}">
-    <header>{{title}}{{ post.created_at}}</header>
+    <header>{{title}}</header>
   </a>
-   <h2> user {{user.username}}</h2>
+   <h2>Created by user {{user.username}} at {{format_time createdAt}}</h2>
   <p>{{post_body}}</p>
   <textarea name="comments" id="comment" cols="100" rows="5"></textarea>
    
