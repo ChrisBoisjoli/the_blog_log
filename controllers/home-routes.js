@@ -25,6 +25,32 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET one post
+
+router.get('/posts/:id', withAuth, async (req, res) => {
+  try {
+    const dbPostData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: Post,
+          attributes: [
+            'id',
+            'title',
+            'post_body',
+            
+          ],
+        },
+      ],
+    });
+
+    const post = dbPostData.get({ plain: true });
+    res.render('posts', { post, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // login 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
