@@ -19,13 +19,13 @@
   ## Usage: 
   Use to talk about tech. Not fully functioning photos are of local machine. <br>
   Homepage
-   ![Home](./assets/home.png)
+   ![Home](/public/images/home.png)
    <br>
    Login
-   ![Login](./assets/login.png)
+   ![Login](/public/images/login.png)
    <br>
    Create
-   ![reate](./assets/create.png)
+   ![create](/public/images/create.png)
 
   ## Contributing:
   email for contribting
