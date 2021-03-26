@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 
 //shows post username
-router.get('/', withAuth, async (req, res) => {
+router.get('/',  async (req, res) => {
   try {
     const postData = await Post.findAll({
       include: [
