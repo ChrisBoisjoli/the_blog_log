@@ -2,9 +2,9 @@ const router = require('express').Router();
 const { User, Post } = require('../models');
 const withAuth = require('../utils/auth');
 
-//get Dashboard
+
 // Create post
-router.get('/create', withAuth, async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
       res.render('create', {
       loggedIn: req.session.loggedIn,

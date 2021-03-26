@@ -10,7 +10,7 @@ const create = async (event) => {
         const response = await fetch('/dashboard/create', 
         {
             method: 'POST',
-            body: JSON.stringify({ title, content }),
+            body: JSON.stringify({ title, post_body }),
             headers: { 'Content-Type': 'application/json' },
         });
 
